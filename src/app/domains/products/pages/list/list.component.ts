@@ -44,7 +44,7 @@ export default class ListComponent implements OnInit, OnChanges {
 
   private getProducts() {
     this.productService.getProducts(this.category_id).subscribe({
-      next: (products) => {
+      next: products => {
         this.products.set(products);
       },
       error: () => {},
@@ -53,7 +53,7 @@ export default class ListComponent implements OnInit, OnChanges {
 
   private getCategories() {
     this.categoryService.getAll().subscribe({
-      next: (data) => {
+      next: data => {
         this.categories.set(data);
       },
       error: () => {},
